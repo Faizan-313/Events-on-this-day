@@ -1,0 +1,102 @@
+/* Container for the events */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e0d7d7c0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading for date */
+.events h1 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+/* Styling for each event */
+.events ul {
+    list-style: none;
+    padding: 0;
+}
+
+.events li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.events strong {
+    font-weight: bold;
+    color: #222;
+}
+
+/* Error message */
+.tag-error {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Input form styling */
+.input-date form {
+    margin: 20px auto;
+    padding: 20px 0px 20px 50px;
+    width: 80%;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels for input fields */
+.input-date label {
+    font-size: 1.2em;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Input fields */
+.input-date input[type="number"] {
+    padding: 10px;
+    width: 90%;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Submit button */
+#submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    width: 92%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container, .input-date {
+        width: 90%;
+    }
+
+    .input-date input[type="number"] {
+        width: 80%;
+    }
+}

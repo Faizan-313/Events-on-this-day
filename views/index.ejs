@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link href="/styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <% if(locals.data) { %>
+        <div class="events">
+            <h1>Date: <%= data.date %></h1>
+
+            <%# iterate over the list of events %>
+            <% data.events.forEach(event => { %>     
+                <ul>
+                    <li><strong><%= event.year %></strong>: <br><%= event.description %></li>
+                </ul>
+            <% }); %>
+        </div>
+        <% } %>
+
+        <%# check for error %>
+        <% if(locals.error) { %>
+            <div class="tag-error">
+                <%= error %>
+            </div>
+        <% } %>
+    </div>
+
+    <%# for the custom date %>
+    <div class="input-date">
+        <form action="/submit" method="GET">
+            <label for="month">Month</label>
+            <input type="number" class="month" name="month" id="month" min="1" max="12" oninput="adjustDayMax()" placeholder="[1, 12]" required>
+            <br>
+            <label for="day">Day</label>
+            <input type="number" class="day" name="day" id="day" min="1" max="31" placeholder="1 to (31 || 28 || 30)" required>
+            <input type="submit" value="Submit" id="submit"> 
+        </form>
+    </div>
+
+    <%# if user puts day or month out of range then it will set the month and day to its maximum value %>
+    <script>
+        function adjustDayMax() {
+            const month = document.getElementById('month').value;
+            const dayInput = document.getElementById('day');
+
+            let maxDays = 31;
+            if (month == 2) {
+                maxDays = 28; 
+            } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                maxDays = 30; 
+            }
+            dayInput.max = maxDays;
+
+            if (dayInput.value > maxDays) {
+                dayInput.value = maxDays;
+            }
+        }
+    </script>
+</body>
+</html>
