@@ -1,3 +1,7 @@
+a{
+    text-decoration: none;
+}
+
 /* Container for the events */
 .container {
     width: 80%;
@@ -16,6 +20,10 @@
     margin-top: 0px;
 }
 
+.date{
+    display: flex;
+    justify-content: space-between;
+}
 /* Styling for each event */
 .events ul {
     list-style: none;
@@ -62,8 +70,8 @@
 }
 
 /* Input fields */
-.input-date input[type="number"] {
-    padding: 10px;
+.input-date input[type="number"] , #submit{
+    padding: 15px;
     width: 90%;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -79,9 +87,7 @@
     padding: 10px 20px;
     margin-top: 20px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    width: 92%;
+    margin-left: 1%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -90,10 +96,25 @@
     background-color: #45a049;
 }
 
+.custom_date_link{
+    font-size: large;
+    font-weight: 800;
+    transition: font-size 0.3s ease;
+    display: inline-block;
+}
+
+.custom_date_link:hover{
+    font-size: 1.6rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .container, .input-date {
-        width: 90%;
+    .container {
+        width: 85%;
+    }
+    .input-date{
+        margin-left: 1%;
+        width: 97%;
     }
 
     .input-date input[type="number"] {

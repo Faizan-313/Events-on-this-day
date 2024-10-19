@@ -10,13 +10,19 @@
     <div class="container">
         <% if(locals.data) { %>
         <div class="events">
-            <h1>Date: <%= data.date %></h1>
-
+            <div class="date">
+                <h1>Date: <%= data.date %></h1>
+                <a class="custom_date_link" href="#input-date">Custom date</a>
+            </div>
             <%# iterate over the list of events %>
             <% data.events.forEach(event => { %>     
                 <ul>
-                    <li><strong><%= event.year %></strong>: <br><%= event.description %></li>
-                </ul>
+                    <li><strong><%= event.year %></strong>: <br><%= event.description %> <br><br><span style="font-weight: bolder; color: black;">For More Information:- </span><br>
+                        <% event.wikipedia.forEach(link => {  %>
+                            <a href="<%= link.wikipedia %>"><%=link.title  %></a><br>
+                        <% }) %>
+                    </li>
+                </ul><hr>
             <% }); %>
         </div>
         <% } %>
@@ -28,15 +34,14 @@
             </div>
         <% } %>
     </div>
-
     <%# for the custom date %>
-    <div class="input-date">
+    <div id="input-date" class="input-date">
         <form action="/submit" method="GET">
             <label for="month">Month</label>
-            <input type="number" class="month" name="month" id="month" min="1" max="12" oninput="adjustDayMax()" placeholder="[1, 12]" required>
+            <input type="number" class="month" name="month" id="month" min="1" max="12" oninput="adjustDayMax()" placeholder="Month Number" required>
             <br>
             <label for="day">Day</label>
-            <input type="number" class="day" name="day" id="day" min="1" max="31" placeholder="1 to (31 || 28 || 30)" required>
+            <input type="number" class="day" name="day" id="day" min="1" max="31" placeholder="Day" required>
             <input type="submit" value="Submit" id="submit"> 
         </form>
     </div>
