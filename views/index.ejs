@@ -17,9 +17,11 @@
             <%# iterate over the list of events %>
             <% data.events.forEach(event => { %>     
                 <ul>
-                    <li><strong><%= event.year %></strong>: <br><%= event.description %> <br><br><span style="font-weight: bolder; color: black;">For More Information:- </span><br>
+                    <li><strong><span class="event-year"><%= event.year %></span></strong>
+                        <br><br><%= event.description %><br><br>
+                        <span style="font-weight: bolder; font-size: x-large; color: black;">For More Information:- </span><br>
                         <% event.wikipedia.forEach(link => {  %>
-                            <a href="<%= link.wikipedia %>"><%=link.title  %></a><br>
+                            <a class="more-info-links" href="<%= link.wikipedia %>"><%=link.title  %></a><br>
                         <% }) %>
                     </li>
                 </ul><hr>
@@ -45,6 +47,16 @@
             <input type="submit" value="Submit" id="submit"> 
         </form>
     </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 <strong> Peer Faizan</strong>. All rights reserved.</p>
+            <ul class="socials">
+                <li><a href="https://www.linkedin.com/in/faizan-syed-4370152b9"><img src="/images/linkedin.png"></a></li>
+                <li><a href="https://github.com/Faizan-313"><img src="/images/github.jpeg"></a></li>
+                <li><a href="https://x.com/Faizan__Syed"><img src="/images/twitter.png"></a></li>
+            </ul>
+        </div>
+    </footer>
 
     <%# if user puts day or month out of range then it will set the month and day to its maximum value %>
     <script>

@@ -31,7 +31,7 @@ a{
 }
 
 .events li {
-    margin-bottom: 15px;
+    margin-bottom: 19px;
     font-size: 1.1em;
     color: #555;
 }
@@ -107,6 +107,94 @@ a{
     font-size: 1.6rem;
 }
 
+.event-year{
+    font-weight: 900;
+    font-size: xx-large;
+    color: rgba(92, 4, 89, 0.575);
+}
+
+/* Gradient Border Animation */
+.event-year {
+    padding: 10px;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgb(218, 174, 174), rgb(107, 107, 226), rgb(67, 226, 67), rgb(208, 208, 141));
+    background-size: 400% 100%;
+    animation: gradientMove 5s linear infinite;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.more-info-links{
+    font-size: small;
+    font-weight: 200;
+}
+
+/*footer*/
+footer {
+    background-color: #f5efef;
+    color: rgb(6, 35, 41);
+    text-align: center;
+    padding: 20px 0;
+    /* position:; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.socials {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.socials li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.socials li a {
+    color: rgb(5, 37, 41);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.socials li img{
+    width: 25px; 
+    height: auto;
+}
+
+.socials li img {
+    width: 24px; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.socials li:hover img {
+    transform: scale(1.4); 
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -119,5 +207,14 @@ a{
 
     .input-date input[type="number"] {
         width: 80%;
+    }
+    .socials li {
+        margin: 10px 10px;
+    }
+    .date{
+        font-size: medium;
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
     }
 }
