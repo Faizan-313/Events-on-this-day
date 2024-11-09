@@ -6,8 +6,12 @@
     <title>Events</title>
     <link href="/styles/style.css" rel="stylesheet">
 </head>
-<body>
+<body id="top">
     <div class="container">
+        <header>
+            <h1 class="title">Historic Events on This Day</h1>
+            <p class="subtitle">Discover the significant events that occurred on today's date throughout history.</p>
+        </header>
         <% if(locals.data) { %>
         <div class="events">
             <div class="date">
@@ -47,6 +51,7 @@
             <input type="submit" value="Submit" id="submit"> 
         </form>
     </div>
+    <a href="#top" class="back-to-top">Back to Top</a>
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 <strong> Peer Faizan</strong>. All rights reserved.</p>
@@ -76,6 +81,19 @@
                 dayInput.value = maxDays;
             }
         }
+    </script>
+    <script>
+        // Get the "Back to Top" button
+        const backToTopButton = document.querySelector('.back-to-top');
+    
+        // Show or hide the button based on the scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 1000) {  // 1000px scroll threshold
+                backToTopButton.style.display = 'block';  // Show button
+            } else {
+                backToTopButton.style.display = 'none';   // Hide button
+            }
+        });
     </script>
 </body>
 </html>
