@@ -5,7 +5,6 @@ const app = express();
 const port = 3000;
 app.use(express.static("public"));
 
-response.setHeader('Cache-Control', 'no-store');
 
 import bodyParser from "body-parser";
 app.use(bodyParser.urlencoded({extended: true}));
